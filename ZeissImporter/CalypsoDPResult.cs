@@ -31,6 +31,13 @@ namespace ZeissImporter
         #endregion
 
         #region 属性 properties
+        public List<OutputDMIS> MergedOutputs
+        {
+            get
+            {
+                return data.MergeDPOutputs();
+            }
+        }
         public List<OutputDMIS> Outputs
         {
             get
@@ -173,7 +180,7 @@ namespace ZeissImporter
                     break;
                 }
             }
-            return res.MergeDPOutputs();
+            return res;
         }
 
         private void ParseHeader(List<string> list)
@@ -238,50 +245,6 @@ namespace ZeissImporter
             }
         }
 
-        private void ParseData(string[] data)
-        {
-            //DP format by Calypso
-            for (int i = 0; i < data.Count(); ++i)
-
-            {
-                string buf = data[i];
-                string fus = buf.Substring(0, 2);
-                switch (fus)
-                {
-                    case "$$":
-                        //means the line is a comment, ignore, no operation
-                        break;
-                    case "DA":
-                        //DATE
-                        break;
-                    case "TI":
-                        //TIME
-                        break;
-                    case "OP":
-                        //operid from Calypso, operator
-                        break;
-                    case "DI":
-                        //dmeid config name of CMM
-                        break;
-                    case "DS":
-                        //dmeswi software name, usually it's Calypso
-                        break;
-                    case "DV":
-                        //dmeswv software version
-                        break;
-                    case "PL":
-                        //planid inspection name
-                        break;
-                    case "UN":
-                        //unit length angle temperature
-                        break;
-                    case "OU":
-                        //output content
-                        break;
-
-                }
-            }
-        }
         #endregion
 
         #region 静态成员

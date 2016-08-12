@@ -79,7 +79,7 @@ namespace DMOBase
         {
             return string.Format("FEAT/POINT,CART");
         }
-        public string ToString()
+        public override string ToString()
         {
             string ftype = Ftype.ToString();
 

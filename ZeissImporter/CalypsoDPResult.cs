@@ -26,7 +26,7 @@ namespace ZeissImporter
         string UNIT_ANGLE;
         string UNIT_TEMP;
         List<OutputDMIS> data;
-
+        Dictionary<string, string> name_dic;
 
         #endregion
 
@@ -35,7 +35,7 @@ namespace ZeissImporter
         {
             get
             {
-                return data.MergeDPOutputs();
+                return data.MergeDPOutputs(name_dic);
             }
         }
         public List<OutputDMIS> Outputs
@@ -129,8 +129,10 @@ namespace ZeissImporter
             int end_line_number = l.IndexOf("ENDFIL");
             ParseHeader(l.GetRange(1, split_line_number - 1));
             data = ParseOutputs(l.GetRange(split_line_number + 1, end_line_number - split_line_number - 1));
-            Dictionary<string,string> name_dic = ParseNames(l.GetRange(end_line_number + 1, l.Count - end_line_number - 1));
+            name_dic = ParseNames(l.GetRange(end_line_number + 1, l.Count - end_line_number - 1));
+            
         }
+
 
         private Dictionary<string, string> ParseNames(List<string> list)
         {

@@ -24,6 +24,17 @@ namespace DMOBase
         #endregion
 
         #region 属性 properties
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
         public DMISTType TType
         {
             get;
@@ -131,7 +142,7 @@ namespace DMOBase
                     throw new NotImplementedException("unknown tolerance direction");
             }
         }
-        public string ToString()
+        public override string ToString()
         {
             if (TType == DMISTType.T)
             {

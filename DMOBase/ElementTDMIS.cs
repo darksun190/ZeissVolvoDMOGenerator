@@ -20,7 +20,7 @@ namespace DMOBase
         bool status;
         private string rawstring;
 
-        
+
         #endregion
 
         #region 属性 properties
@@ -107,16 +107,10 @@ namespace DMOBase
             }
             else
             {
-                if (tolDirection == DMISTolDirection.PROFS)
-                {
-                    status = value_buf[2].Trim().CompareTo("INTOL") == 0;
-                    actual = double.Parse(value_buf[0]);
-                }
-                else
-                {
-                    status = value_buf[1].Trim().CompareTo("INTOL") == 0;
-                    actual = double.Parse(value_buf[0]);
-                }
+
+                status = value_buf[1].Trim().CompareTo("INTOL") == 0;
+                actual = double.Parse(value_buf[0]);
+
             }
         }
         #endregion

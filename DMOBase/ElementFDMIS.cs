@@ -33,6 +33,10 @@ namespace DMOBase
             {
                 return name;
             }
+            set
+            {
+                name = value;
+            }
         }
         #endregion
 

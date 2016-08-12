@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalypsoDPExtension.cs" />
     <Compile Include="VolvoDMOResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

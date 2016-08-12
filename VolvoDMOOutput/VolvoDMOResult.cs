@@ -22,7 +22,7 @@ namespace VolvoDMOOutput
             res.contactor = dp.Operator;
             res.note = "note";
 
-            res.data = dp.Outputs.MergeDPOutputs();
+            res.data = dp.Outputs;
 
             return res;
         }

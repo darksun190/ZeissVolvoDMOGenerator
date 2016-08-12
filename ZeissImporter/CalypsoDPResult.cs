@@ -121,7 +121,26 @@ namespace ZeissImporter
             int split_line_number = l.IndexOf(@"$$ ------------------------  RESULT-BLOCKS ---------------------- ");
             int end_line_number = l.IndexOf("ENDFIL");
             ParseHeader(l.GetRange(1, split_line_number - 1));
-            ParseOutputs(l.GetRange(split_line_number + 1, end_line_number - split_line_number - 1));
+            data = ParseOutputs(l.GetRange(split_line_number + 1, end_line_number - split_line_number - 1));
+            Dictionary<string,string> name_dic = ParseNames(l.GetRange(end_line_number + 1, l.Count - end_line_number - 1));
+        }
+
+        private Dictionary<string, string> ParseNames(List<string> list)
+        {
+            Dictionary<string, string> res = new Dictionary<string, string>();
+            foreach(string s in list)
+            {
+                string ss = s.Trim(" $".ToCharArray());
+                if(ss.Contains("=>"))
+                {
+                    var dic_array = ss.Split(new string[]
+                        {
+                        "=>" }
+                        , StringSplitOptions.RemoveEmptyEntries);
+                    res.Add(dic_array[0].Trim(), dic_array[1].Trim());
+                }
+            }
+            return res;
         }
 
 
@@ -132,9 +151,9 @@ namespace ZeissImporter
         #endregion
 
         #region 私有方法 private mehod
-        private void ParseOutputs(List<string> list)
+        private List<OutputDMIS> ParseOutputs(List<string> list)
         {
-            data = new List<OutputDMIS>();
+            var res = new List<OutputDMIS>();
             int i = 0;
             for(;i<list.Count;)
             {
@@ -143,18 +162,18 @@ namespace ZeissImporter
                 {
                     if(list[j].StartsWith("OUTPUT"))
                     {
-                        data.Add(new OutputDMIS(list.GetRange(i, j - i)));
+                        res.Add(new OutputDMIS(list.GetRange(i, j - i)));
                         i = j;
                         break;
                     }
                 }
                 if(j==list.Count)
                 {
-                    data.Add(new OutputDMIS(list.GetRange(i, j - i)));
+                    res.Add(new OutputDMIS(list.GetRange(i, j - i)));
                     break;
                 }
             }
-            //throw new NotImplementedException();
+            return res.MergeDPOutputs();
         }
 
         private void ParseHeader(List<string> list)

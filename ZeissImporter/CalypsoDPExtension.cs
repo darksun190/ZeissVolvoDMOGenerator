@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DMOBase;
 
-namespace VolvoDMOOutput
+namespace ZeissImporter
 {
     public static class CalypsoDPExtension
     {

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoDMOOutput", "VolvoDMOO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMOBase", "DMOBase\DMOBase.csproj", "{23B4F5A6-0831-4AB0-B060-8F49BCF13415}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeanUserControl", "..\SeanUserControl\SeanUserControl\SeanUserControl.csproj", "{870F0050-DDC3-4675-9546-375930412BCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{23B4F5A6-0831-4AB0-B060-8F49BCF13415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23B4F5A6-0831-4AB0-B060-8F49BCF13415}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23B4F5A6-0831-4AB0-B060-8F49BCF13415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{870F0050-DDC3-4675-9546-375930412BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{870F0050-DDC3-4675-9546-375930412BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{870F0050-DDC3-4675-9546-375930412BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{870F0050-DDC3-4675-9546-375930412BCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

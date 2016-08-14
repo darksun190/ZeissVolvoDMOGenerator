@@ -25,19 +25,31 @@ namespace ZeissVolvoDMOGenerator.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".\\output.dmo")]
-        public string DMOOutputFile {
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\TEMP")]
+        public string DMOOutputPath {
             get {
-                return ((string)(this["DMOOutputFile"]));
+                return ((string)(this["DMOOutputPath"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Public\\Documents\\Zeiss\\CALYPSO 6.0\\workarea\\dmisout")]
+        public string DPFolder {
+            get {
+                return ((string)(this["DPFolder"]));
+            }
+            set {
+                this["DPFolder"] = value;
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Sunxin\\客户与活动\\上海ThyssenKrupp\\CMA1_03.dp")]
-        public string DPFile {
+        [global::System.Configuration.DefaultSettingValueAttribute(".\\DMOSettings.xml")]
+        public string DMOSettingFile {
             get {
-                return ((string)(this["DPFile"]));
+                return ((string)(this["DMOSettingFile"]));
             }
         }
     }

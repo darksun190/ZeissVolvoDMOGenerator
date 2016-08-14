@@ -45,6 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DMOSettingsUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DMOSettingsUI.Designer.cs">
+      <DependentUpon>DMOSettingsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMOSettingsClass.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DMOSettingsUI.resx">
+      <DependentUpon>DMOSettingsUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,6 +91,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SeanUserControl\SeanUserControl\SeanUserControl.csproj">
+      <Project>{870F0050-DDC3-4675-9546-375930412BCC}</Project>
+      <Name>SeanUserControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VolvoDMOOutput\VolvoDMOOutput.csproj">
       <Project>{ce4d1017-4539-49fc-8627-c5298598d32f}</Project>
       <Name>VolvoDMOOutput</Name>

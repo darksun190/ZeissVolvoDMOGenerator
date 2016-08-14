@@ -38,6 +38,12 @@ namespace VolvoDMOOutput
             sw.WriteLine();
             sw.WriteLine("DATE={0}", DATE.ToString("yyyy/MM/dd"));
             sw.WriteLine("TIME={0}", TIME.ToString("hh:mm:ss"));
+            sw.WriteLine("PR(1)='{0}'", PR);
+            sw.WriteLine("LI(2)='{0}'", LI);
+            sw.WriteLine("PL(3)='{0}'", PL);
+            sw.WriteLine("PN(4)='{0}'", PN);
+            sw.WriteLine("PS(5)='{0}'", PS);
+            sw.WriteLine("Q(6)='{0}'", Q);
 
             return sw.ToString();
         }
@@ -56,7 +62,7 @@ namespace VolvoDMOOutput
             return "ENDFIL";
         }
         #endregion
-        public string ToString()
+        public new string ToString()
         {
             return getHeader() + getOutputs() + getEnd();
         }
@@ -68,18 +74,19 @@ namespace VolvoDMOOutput
         string SW_name_version;
         string contactor;
         string note;
-        string PR;
-        string LI;
-        string PL;
-        string PN;
-        string PS;
-        string Q;
+
         List<OutputDMIS> data;
 
 
         #endregion
 
         #region 属性 properties
+        public string PR { get; set; }
+        public string LI { get; set; }
+        public string PL { get; set; }
+        public string PN { get; set; }
+        public string PS { get; set; }
+        public string Q { get; set; }
         public DateTime DATETIME
         {
             set
